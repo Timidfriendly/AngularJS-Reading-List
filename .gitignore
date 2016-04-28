@@ -1,0 +1,5 @@
+script.md
+.DS-Store
+app-orig
+bower_components
+node_modules

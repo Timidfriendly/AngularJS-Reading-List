@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="readingList" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="readingList" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="readingList" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="readingList" class="no-js "><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS Reading List</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app="readingList">
+    <div class="container">
+        <h1>Angular Reading List of
+        Awesome</h1>
+
+        <div class="row">
+
+            <button class="btn btn-default">
+                Create a Review
+            </button>
+            <hr>
+            <form name="reviewForm" class="form-horizontal">
+
+                <section class="row well live-preview">
+                    <aside class="col-sm-3">
+                        <a href="http://www.amazon.com/gp/product/">
+                            <img ng-src="http://images.amazon.com/images/P/.01.ZTZZZZZZ.jpg" alt="Cover of " class="full"
+                                 src="http://images.amazon.com/images/P/.01.ZTZZZZZZ.jpg">
+                        </a>
+                        <p>0/5</p>
+                    </aside>
+
+                    <div class="col-sm-9">
+                        <h3>
+                            <a href="http://www.amazon.com/gp/product/">
+                                Title of Book
+                            </a>
+                        </h3>
+                        <cite class="text-muted">Written by Author's Name</cite>
+
+                        <p>No review yet.</p>
+
+                        <ul class="list-unstyled">
+                        </ul>
+                    </div>
+                </section>
+
+                <div class="input-container">
+                    <fieldset class="form-group">
+                        <label for="title" class="col-sm-2 control-label">Title:</label>
+                        <span class="col-sm-9">
+                            <input type="text" class="form-control" id="title" placeholder="Book Title">
+                        </span>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label for="isbn" class="control-label col-sm-2">ISBN:</label>
+                        <span class="col-sm-9">
+                            <input type="text" id="isbn" class="form-control ng-pristine ng-valid" ng-model="reviewFormCtrl.book.isbn"
+                                 maxlength="10" placeholder="ISBN-10">
+                        </span>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label class="control-label col-sm-2" for="author">Author</label>
+                        <span class="col-sm-9">
+                            <input type="text" id="author" class="form-control" placeholder="Name of the Author">
+                        </span>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label class="control-label col-sm-2" for="review">Review</label>
+                            <span class="col-sm-9">
+                                <textarea id="review" class="form-control" cols="30" rows="3" placeholder="Book Review"></textarea>
+                            </span>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label for="rating" class="control-label col-sm-2">Rating:</label>
+                        <span class="col-sm-9">
+                            <select class="form-control" id="rating" value="5">
+                                <option value="Select a value"></option>
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </span>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label class="control-label col-sm-2">Genre:</label>
+                        <div class="genre">
+                            <label for="fable"
+                                                                     class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="fable">
+                            fable
+                        </label>
+                        <label for="fantasy" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="fantasy">
+                            fantasy
+                        </label>
+                        <label for="fiction" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="fiction">
+                            fiction
+                        </label>
+                        <label for="folklore" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="folklore">
+                            folklore
+                        </label>
+                        <label for="horror" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="horror">
+                            horror
+                        </label>
+                        <label for="humor" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="humor">
+                            humor
+                        </label>
+                        <label for="legend" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="legend">
+                            legend
+                        </label>
+                        <label for="metafiction" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="metafiction">
+                            metafiction
+                        </label>
+                        <label for="mystery" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="mystery">
+                            mystery
+                        </label>
+                        <label for="mythology" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="mythology">
+                            mythology
+                        </label>
+                        <label for="non-fiction" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="non-fiction">
+                            non-fiction
+                        </label>
+                        <label for="poetry" class="genre-label form-control ">
+                            <input type="checkbox" name="genre" id="poetry">
+                            poetry
+                        </label>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <span class="col-sm-9 col-sm-offset-2 button-from-hell">
+                            <button class="btn btn-primary">Save Review</button>
+                        </span>
+                    </fieldset>
+                </div>
+            </form>
+
+            <hr>
+
+            <ul class="list-unstyled col-sm-8">
+                <li class="book row">
+                    <aside class="col-sm-3">
+
+                        <a href="http://www.amazon.com/gp/product/0553593714">
+                            <img
+                                ng-src="http://images.amazon.com/images/P/0553593714.01.ZTZZZZZZ.jpg"
+                                alt="Cover of A Game of Thrones: A Song of Ice and Fire" class="full"
+                                src="http://images.amazon.com/images/P/0553593714.01.ZTZZZZZZ.jpg"></a>
+
+                        <p class="rating goodRating">4/5</p>
+                    </aside>
+                    <div class="col-sm-9">
+                        <h3><a href="http://www.amazon.com/gp/product/0553593714">A Game of Thrones: A
+                            Song of Ice and Fire</a></h3>
+
+                        <cite class="text-muted">Written by George R.R. Martin</cite>
+
+                        <p>The most inventive and entertaining fantasy saga of our time—warrants one hell
+                            of an introduction. I loved this book!</p>
+
+                        <div>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="label label-primary">fantasy</span>
+                                </li>
+                                <li>
+                                    <span class="label label-primary">non-fiction</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li><!-- end ngRepeat: book in readingListCtrl.books -->
+                <li class="book row">
+                    <aside class="col-sm-3">
+
+                        <a href="http://www.amazon.com/gp/product/0615487661">
+                            <img
+                                ng-src="http://images.amazon.com/images/P/0615487661.01.ZTZZZZZZ.jpg"
+                                alt="Cover of HTML for Babies" class="full"
+                                src="http://images.amazon.com/images/P/0615487661.01.ZTZZZZZZ.jpg">
+                        </a>
+
+                        <p class="rating goodRating">5/5</p>
+                    </aside>
+                    <div class="col-sm-9">
+                        <h3>
+                            <a href="http://www.amazon.com/gp/product/0615487661">HTML for Babies</a>
+                        </h3>
+
+                        <cite class="text-muted">Written by John C Vanden-Heuvel Sr</cite>
+
+                        <p>It's never too early to be standards compliant! I taught my little one mark-up
+                            in under one hour!</p>
+
+                        <div>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="label label-primary">fiction</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="book row">
+                    <aside class="col-sm-3">
+
+                        <a href="http://www.amazon.com/gp/product/1489522212">
+                            <img
+                                ng-src="http://images.amazon.com/images/P/1489522212.01.ZTZZZZZZ.jpg"
+                                alt="Cover of A is for Array" class="full"
+                                src="http://images.amazon.com/images/P/1489522212.01.ZTZZZZZZ.jpg"></a>
+
+                        <p class="rating goodRating">4/5</p>
+                    </aside>
+                    <div class="col-sm-9">
+                        <h3><a href="http://www.amazon.com/gp/product/1489522212">A is for Array</a></h3>
+
+                        <cite class="text-muted">Written by Brandon J Hansen</cite>
+
+                        <p>A is for Array is the ABC book for future programmers. Filled with fun
+                            illustrations and simple real-world examples, my children loved seeing my world intertwined with
+                            theirs!</p>
+
+                        <div>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="label label-primary">fiction</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="book row">
+                    <aside class="col-sm-3">
+
+                        <a href="http://www.amazon.com/gp/product/0812513711">
+                            <img
+                                ng-src="http://images.amazon.com/images/P/0812513711.01.ZTZZZZZZ.jpg"
+                                alt="Cover of The Dragon Reborn" class="full"
+                                src="http://images.amazon.com/images/P/0812513711.01.ZTZZZZZZ.jpg"></a>
+
+                        <p class="rating goodRating">4/5</p>
+                    </aside>
+                    <div class="col-sm-9">
+                        <h3><a href="http://www.amazon.com/gp/product/0812513711">The Dragon Reborn</a>
+                        </h3>
+
+                        <cite class="text-muted">Written by Robert Jordan</cite>
+
+                        <p>The Wheel weaves as the Wheel wills, and we are only the thread of the
+                            Pattern. Moiraine</p>
+
+                        <div>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="label label-primary">fantasy</span>
+                                </li>
+                                <li>
+                                    <span class="label label-primary">non-fiction</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+</html>
