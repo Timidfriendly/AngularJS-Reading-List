@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>
-<html lang="en" ng-app="readingList" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>
-<html lang="en" ng-app="readingList" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>
-<html lang="en" ng-app="readingList" class="no-js lt-ie9"> <![endif]-->
+<html lang="en" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="readingList" class="no-js "><!--<![endif]-->
+<html lang="en" class="no-js "><!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,16 +17,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body ng-app="readingList" >
-    <div class="container" ng-include="'partials/app.html'">
+<body ng-app="readingList">
+    <div class="container" ng-include="'partials/app.html'"></div>
 
-    </div>
-
-
-
-<script src="../lib/angular/angular.min.js"></script>
-<script src="../lib/angular-route/angular-route.min.js"></script>
-<script src="js/app.js"></script>
-
+    <script src="../lib/angular/angular.min.js"></script>
+    <script src="../lib/angular-route/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
