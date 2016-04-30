@@ -20,7 +20,7 @@
                             alt="Cover of A Game of Thrones: A Song of Ice and Fire" class="full"
                             src="http://images.amazon.com/images/P/{{ book.isbn }}.jpg"></a>
 
-                <p class="rating goodRating">4/5</p>
+                <p class="rating" ng-class="{goodRating : book.rating >= 5}">{{ book.rating }}/5 </p>
             </aside>
             <div class="col-sm-9">
                 <h3>
