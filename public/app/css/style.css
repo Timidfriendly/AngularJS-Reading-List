@@ -60,12 +60,15 @@ book-cover {
   margin-right: 0;
 }
 
-.live-preview > aside, li.book > aside {
+.live-preview > aside,
+li.book > aside {
   padding: 0;
 }
 
-.live-preview > aside img, li.book > aside img {
+.live-preview aside img,
+li.book aside img {
   width: 100%;
+  max-width: 100%;
 }
 
 .live-preview > aside p, li.book .rating {
@@ -118,6 +121,8 @@ div.genre {
   overflow: hidden;
 }
 
+
+
 .genre-label {
   float: left;
   width: 50%;
@@ -137,6 +142,11 @@ div.genre {
 .genre-label:active {
   border-color: #999;
   color: #222;
+}
+
+.genre-labels .label {
+    display: inline-block;
+    margin-right:0.5em;
 }
 
 @media (max-width: 768px) {
