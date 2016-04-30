@@ -1,6 +1,6 @@
 <h1>Angular Reading List of Awesome!</h1>
 
-<div class="row">
+<div class="row" ng-controller="ReadingListController as readingListCtrl">
 
     <button class="btn btn-default">
         Create a Review
@@ -11,25 +11,27 @@
     <hr>
 
     <ul class="list-unstyled col-sm-8">
-        <li class="book row">
+        <li class="book row" ng-repeat="book in readingListCtrl.books">
             <aside class="col-sm-3">
 
-                <a href="http://www.amazon.com/gp/product/0553593714">
+                <a href="http://www.amazon.com/gp/product/{{ book.isbn }}">
                     <img
-                            ng-src="http://images.amazon.com/images/P/0553593714.01.ZTZZZZZZ.jpg"
+                            ng-src="http://images.amazon.com/images/P/{{ book.isbn }}.jpg"
                             alt="Cover of A Game of Thrones: A Song of Ice and Fire" class="full"
-                            src="http://images.amazon.com/images/P/0553593714.01.ZTZZZZZZ.jpg"></a>
+                            src="http://images.amazon.com/images/P/{{ book.isbn }}.jpg"></a>
 
                 <p class="rating goodRating">4/5</p>
             </aside>
             <div class="col-sm-9">
-                <h3><a href="http://www.amazon.com/gp/product/0553593714">A Game of Thrones: A
-                    Song of Ice and Fire</a></h3>
+                <h3>
+                    <a href="http://www.amazon.com/gp/product/{{ book.isbn }}">
+                        {{ book.title }}
+                    </a>
+                </h3>
 
-                <cite class="text-muted">Written by George R.R. Martin</cite>
+                <cite class="text-muted">Written by {{ book.author }}</cite>
 
-                <p>The most inventive and entertaining fantasy saga of our time—warrants one hell
-                    of an introduction. I loved this book!</p>
+                <p>{{ book.review }}</p>
 
                 <div>
                     <ul class="list-unstyled">

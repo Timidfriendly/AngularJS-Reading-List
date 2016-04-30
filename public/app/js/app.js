@@ -1,7 +1,12 @@
 (function () {
   'use strict';
 
-  angular.module('readingList', []);
+  angular.module('readingList', [])
+      .controller("ReadingListController", function  () {
+          this.books = books;
+          this.genres = genres;
+      })
+  ;
     
 
 
