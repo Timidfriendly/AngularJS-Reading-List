@@ -13,6 +13,14 @@
                 replace: true
             }
         })
+
+        .directive('reviewForm', function  () {
+            return {
+                restrict: 'E',
+                templateUrl: 'partials/review-form.html',
+                replace: true
+            }
+        })
     ;
 
 
