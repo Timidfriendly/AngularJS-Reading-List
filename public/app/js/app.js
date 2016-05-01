@@ -6,6 +6,13 @@
             this.books = books;
             this.genres = genres;
         })
+        .directive('bookGenres', function  () {
+            return {
+                restrict: 'E',
+                templateUrl: 'partials/book-genres.html',
+                replace: true
+            }
+        })
     ;
 
 

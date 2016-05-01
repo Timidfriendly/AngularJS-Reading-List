@@ -1,7 +1,6 @@
-<div>
-    <ul class="list-unstyled">
-        <li>
-            <span class="label label-primary">fiction</span>
-        </li>
-    </ul>
-</div>
+<ul class="list-unstyled">
+    <li class="genre-labels"> <!--(key, value can be called anything e.g. 'genre')-->
+        <span class="label label-primary" ng-repeat="(key, value) in book.genres" ng-show="value">{{ key }}</span>
+        <!--ng-show="value" is the same as ng-show="value === true">-->
+    </li>
+</ul>
