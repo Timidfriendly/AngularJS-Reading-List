@@ -3,7 +3,7 @@
 <div class="row" ng-controller="ReadingListController as readingListCtrl">
 
     <button class="btn btn-default" ng-click="reviewFormToggleCtrl.showForm = !reviewFormToggleCtrl.showForm">
-        <span >Create a Review</span>
+        <span >{{ reviewFormToggleCtrl.showForm ? 'Cancel' : 'Create a Review' }}</span>
     </button>
 
     <review-form ng-show="reviewFormToggleCtrl.showForm"></review-form>
