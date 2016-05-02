@@ -1,24 +1,28 @@
-<form name="reviewForm" class="form-horizontal">
+<form name="reviewForm" class="form-horizontal" >
     <hr>
 
     <section class="row well live-preview">
         <aside class="col-sm-3">
             <a href="http://www.amazon.com/gp/product/">
-                <img ng-src="http://images.amazon.com/images/P/.01.ZTZZZZZZ.jpg" alt="Cover of " class="full"
-                     src="http://images.amazon.com/images/P/.01.ZTZZZZZZ.jpg">
+                <img ng-src="http://images.amazon.com/images/P/{{ reviewFormCtrl.book.isbn }}.jpg" alt="Cover of {{ reviewFormCtrl.book.title }}" class="full"
+                     src="http://images.amazon.com/images/P/{{ reviewFormCtrl.book.isbn }}.01.ZTZZZZZZ.jpg">
             </a>
-            <p>0/5</p>
+            <p>{{ reviewFormCtrl.book.rating ? reviewFormCtrl.book.rating + '/5' : 'No rating yet.' }}</p>
         </aside>
 
         <div class="col-sm-9">
             <h3>
                 <a href="http://www.amazon.com/gp/product/">
-                    Title of Book
+                    {{ reviewFormCtrl.book.title ? reviewFormCtrl.book.title : 'Title of Book' }}
                 </a>
             </h3>
-            <cite class="text-muted">Written by Author's Name</cite>
+            <cite class="text-muted">Written by
+                {{ reviewFormCtrl.book.author ? reviewFormCtrl.book.author : 'Author\'s Name' }}
+            </cite>
 
-            <p>No review yet.</p>
+            <p>
+                {{ reviewFormCtrl.book.review ? reviewFormCtrl.book.review : 'No review yet.' }}
+            </p>
 
             <ul class="list-unstyled">
             </ul>
@@ -29,14 +33,14 @@
         <fieldset class="form-group">
             <label for="title" class="col-sm-2 control-label">Title:</label>
             <span class="col-sm-9">
-                <input type="text" class="form-control" id="title" placeholder="Book Title">
+                <input type="text" class="form-control" id="title" placeholder="Book Title" ng-model="reviewFormCtrl.book.title">
             </span>
         </fieldset>
 
         <fieldset class="form-group">
             <label for="isbn" class="control-label col-sm-2">ISBN:</label>
             <span class="col-sm-9">
-                <input type="text" id="isbn" class="form-control ng-pristine ng-valid"
+                <input type="text" id="isbn" class="form-control"
                        ng-model="reviewFormCtrl.book.isbn"
                        maxlength="10" placeholder="ISBN-10">
             </span>
@@ -45,7 +49,7 @@
         <fieldset class="form-group">
             <label class="control-label col-sm-2" for="author">Author</label>
             <span class="col-sm-9">
-                <input type="text" id="author" class="form-control" placeholder="Name of the Author">
+                <input type="text" id="author" class="form-control" placeholder="Name of the Author" ng-model="reviewFormCtrl.book.author">
             </span>
         </fieldset>
 
@@ -53,14 +57,16 @@
             <label class="control-label col-sm-2" for="review">Review</label>
             <span class="col-sm-9">
                 <textarea id="review" class="form-control" cols="30" rows="3"
-                          placeholder="Book Review"></textarea>
+                          placeholder="Book Review"
+                          ng-model="reviewFormCtrl.book.review"
+                ></textarea>
             </span>
         </fieldset>
 
         <fieldset class="form-group">
             <label for="rating" class="control-label col-sm-2">Rating:</label>
             <span class="col-sm-9">
-                <select class="form-control" id="rating" value="5">
+                <select class="form-control" id="rating" value="5" ng-model="reviewFormCtrl.book.rating">
                     <option value="Select a value"></option>
                     <option value="5">5</option>
                     <option value="4">4</option>

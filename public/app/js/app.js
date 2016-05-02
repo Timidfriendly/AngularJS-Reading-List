@@ -21,8 +21,13 @@
                 replace: true,
                 controller: function () {
                     this.showForm = false;
+                    this.book = {}; // need to be able to empty form on submit
                 },
-                controllerAs: 'reviewFormToggleCtrl'
+                controllerAs: 'reviewFormCtrl',
+                $scope: {
+                    genres: '=',
+                    books: '='
+                }
             }
         })
     ;
