@@ -1,6 +1,5 @@
 <form name="reviewForm" class="form-horizontal" >
     <hr>
-
     <section class="row well live-preview">
         <aside class="col-sm-3">
             <a href="http://www.amazon.com/gp/product/">
@@ -80,56 +79,10 @@
         <fieldset class="form-group">
             <label class="control-label col-sm-2">Genre:</label>
             <div class="genre">
-                <label for="fable"
-                       class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="fable">
-                    fable
+                <label ng-repeat="genre in readingListCtrl.genres" for="{{genre}}" class="genre-label form-control">
+                    <input type="checkbox" name="genre" id="{{genre}}" ng-model="reviewFormCtrl.book.genres[genre]" />
+                    {{genre}}
                 </label>
-                <label for="fantasy" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="fantasy">
-                    fantasy
-                </label>
-                <label for="fiction" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="fiction">
-                    fiction
-                </label>
-                <label for="folklore" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="folklore">
-                    folklore
-                </label>
-                <label for="horror" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="horror">
-                    horror
-                </label>
-                <label for="humor" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="humor">
-                    humor
-                </label>
-                <label for="legend" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="legend">
-                    legend
-                </label>
-                <label for="metafiction" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="metafiction">
-                    metafiction
-                </label>
-                <label for="mystery" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="mystery">
-                    mystery
-                </label>
-                <label for="mythology" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="mythology">
-                    mythology
-                </label>
-                <label for="non-fiction" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="non-fiction">
-                    non-fiction
-                </label>
-                <label for="poetry" class="genre-label form-control ">
-                    <input type="checkbox" name="genre" id="poetry">
-                    poetry
-                </label>
-
             </div>
         </fieldset>
 

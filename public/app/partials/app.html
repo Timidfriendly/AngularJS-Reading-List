@@ -1,7 +1,6 @@
 <h1>Angular Reading List of Awesome!</h1>
 
 <div class="row" ng-controller="ReadingListController as readingListCtrl">
-
     <button class="btn btn-default" ng-click="reviewFormCtrl.showForm = !reviewFormCtrl.showForm">
         <span >{{ reviewFormCtrl.showForm ? 'Cancel' : 'Create a Review' }}</span>
     </button>
@@ -27,7 +26,7 @@
 
                 <p>{{ book.review }}</p>
 
-                <book-genres></book-genres>
+                <book-genres ></book-genres>
 
             </div>
         </li>
