@@ -11,6 +11,12 @@
                 restrict: 'E',
                 templateUrl: 'partials/book-genres.html',
                 replace: true
+                /*
+                ,
+
+                scope: {
+                    genres: '='
+                }*/
             }
         })
 
@@ -20,8 +26,10 @@
                 templateUrl: 'partials/review-form.html',
                 replace: true,
                 controller: function () {
-                    this.showForm = false;
-                    this.book = {}; // need to be able to empty form on submit
+                    this.showForm = true;
+                    this.book = {
+                        genres: {}
+                    }; // need to be able to empty form on submit
                 },
                 controllerAs: 'reviewFormCtrl',
                 $scope: {

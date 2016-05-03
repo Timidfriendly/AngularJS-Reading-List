@@ -144,7 +144,7 @@ div.genre {
   color: #222;
 }
 
-.genre-labels .label {
+.genre-labels {
     display: inline-block;
     margin-right:0.5em;
 }
