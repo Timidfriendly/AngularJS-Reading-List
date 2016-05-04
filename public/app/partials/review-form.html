@@ -22,8 +22,11 @@
             <p>
                 {{ reviewFormCtrl.book.review || 'No review yet.' }}
             </p>
-
             <ul class="list-unstyled">
+                <li ng-repeat="(key, value) in reviewFormCtrl.book.genres">
+                    <span class="label label-primary">{{ key }}</span>
+
+                </li>
             </ul>
         </div>
     </section>
