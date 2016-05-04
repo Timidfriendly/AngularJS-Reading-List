@@ -12,15 +12,15 @@
         <div class="col-sm-9">
             <h3>
                 <a href="http://www.amazon.com/gp/product/">
-                    {{ reviewFormCtrl.book.title ? reviewFormCtrl.book.title : 'Title of Book' }}
+                    {{ reviewFormCtrl.book.title || 'Title of Book' }}
                 </a>
             </h3>
             <cite class="text-muted">Written by
-                {{ reviewFormCtrl.book.author ? reviewFormCtrl.book.author : 'Author\'s Name' }}
+                {{ reviewFormCtrl.book.author || 'Author\'s Name' }}
             </cite>
 
             <p>
-                {{ reviewFormCtrl.book.review ? reviewFormCtrl.book.review : 'No review yet.' }}
+                {{ reviewFormCtrl.book.review || 'No review yet.' }}
             </p>
 
             <ul class="list-unstyled">
