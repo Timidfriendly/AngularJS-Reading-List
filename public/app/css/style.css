@@ -172,3 +172,8 @@ div.genre {
     margin-right: 0;
   }
 }
+
+.ng-dirty .ng-invalid-required {
+  border: 1px solid red !important;
+}
+

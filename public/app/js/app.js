@@ -29,7 +29,17 @@
                     this.showForm = true;
                     this.book = {
                         genres: {}
+                    },
+                    this.addReview = function (form) {
+                        books.push(this.book);
+                        this.book = {genres:{}};
+                        form.$setPristine();
                     }; // need to be able to empty form on submit
+                    this.submitForm = function (reviewForm) {
+                        if (reviewForm.$invalid) {
+                            reviewForm.$setDirty();
+                        }
+                    }
                 },
                 controllerAs: 'reviewFormCtrl',
                 $scope: {
