@@ -1,8 +1,8 @@
 <form name="reviewForm" class="form-horizontal" novalidate ng-submit="reviewForm.$valid &&  reviewFormCtrl.addReview(reviewForm)">
 
-    <h1>yeah {{ reviewForm.$valid }}</h1>
+
     <hr>
-    <section class="row well live-preview">
+    <section class="row well live-preview fade2" ng-show="reviewFormCtrl.book.title">
         <aside class="col-sm-3">
             <a href="http://www.amazon.com/gp/product/">
                 <img ng-src="http://images.amazon.com/images/P/{{ reviewFormCtrl.book.isbn }}.jpg" alt="Cover of {{ reviewFormCtrl.book.title }}" class="full"
@@ -71,10 +71,9 @@
 
         <fieldset class="form-group">
             <label for="rating" class="control-label col-sm-2">Rating:</label>
-            <span class="col-sm-9">
-                <select class="form-control" id="rating" ng-model="reviewFormCtrl.book.rating"
-                        ng-model-options="{ updateOn: 'blur' }"
-                        required>
+            <span class="col-sm-9"
+            >
+                <select class="form-control" id="rating" ng-model="reviewFormCtrl.book.rating" >
                     <option value="Select a value"></option>
                     <option value="5">5</option>
                     <option value="4">4</option>

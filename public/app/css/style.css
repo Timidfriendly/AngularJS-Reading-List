@@ -177,3 +177,17 @@ div.genre {
   border: 1px solid red !important;
 }
 
+.fade2 {
+  transition:0.5s linear all;
+}
+.fade2.ng-hide {
+  opacity:0;
+  display: block !important;
+
+}
+
+
+.fade2.ng-show {
+  opacity:1;
+
+}

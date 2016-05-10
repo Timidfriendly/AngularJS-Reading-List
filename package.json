@@ -21,7 +21,6 @@
     "start": "http-server -a localhost -p 4000",
     "start-server": "http-server -a localhost -p 4000",
     "start-dev": "live-server --port=5000 --open='./public/app'",
-
     "pretest": "npm install",
     "test": "karma start test/karma.conf.js",
     "test-single-run": "karma start test/karma.conf.js  --single-run",
